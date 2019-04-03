@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Crystal Collector Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+<body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+    <div class="jumbotron">
+        <h1 class="display-4"><span>The Crystal Collector Game</span></h1>
+        <p>You will be given a random number at the start of the game. There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score. </p>
+        You <strong>win the game</strong> by matching your total score to the random number that's generated. You will <strong>lose the game</strong> if your total score goes above the random number. </p>
+    The value of each crystal is hidden from you until you click on it. Each time the game starts, the value of each crystal will reset. Good luck!</p>
+      </div>
+<div class = "container-fluid wrapper">
+    <div class = "row">
+        <div id ="score-to-match-text">Number to guess:</div>
+    </div>
+    <div id = "wins">Wins:
+        </div>
+        <div id = "losses">Losses:
+            
+        </div>
+        <div id = "losses">Your total score:
+            
+            </div>
+    <div class = "row">
+        <div id = "crystals">
+    </div>
+    </div>
+</div>
+</body>
+<style>
+.wrapper{
+        width: 1100px;
+        height: 400px;
+        background-color: tan;
+        margin-bottom: 100px;
+        padding: 20px;
+        clear: both;
+        overflow: hidden;
+        border-style: solid 50px;
+        border-color: #dddddd;
+        
+    }
+</style>
+</html>

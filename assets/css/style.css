@@ -1,0 +1,29 @@
+.crystal-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  #score-to-match-text {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      color: white;
+      padding-left: 15px;
+  }
+
+#wins {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+#losses{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+#yourTotalScore{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+}
