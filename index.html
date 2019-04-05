@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script type="text/javascript" src="assets/javascript/game.js"></script> -->
+    <!--<script type="text/javascript" src="assets/javascript/game.js"></script> -->
 
 </head>
 <body>
@@ -34,23 +34,27 @@
         <div id = "crystals">
     </div>
     </div>
+    <hr class ="hr">
 </div>     
 <style>
 .wrapper{
         width: 1100px;
-        height: 800px;
+        height: 525px;
         background-color: tan;
         margin-bottom: 100px;
         padding: 20px;
         clear: both;
         overflow: hidden;
-        border-style: solid 50px;
-        border-color: #dddddd;
+        border-style: solid 300px;
+        border-color: black;
+        
         
     }
 </style>
-<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> -->
-    <script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> 
+    <script>-->
+    
+<script>
 
 var won = 0;
 document.getElementById("wins").innerHTML = "Wins: " + won;
@@ -58,19 +62,14 @@ var lost = 0;
 document.getElementById("losses").innerHTML = "Losses: " + lost;
 var yourTotalScore = 0;
 document.getElementById("yourTotalScore").innerHTML = "Your total score: " + yourTotalScore;
-
-// Have the computer randomly pick a number between 19 and 120 that will become the target score.
+// Start the game. Have the computer randomly pick a number between 19 and 120 that will become the target score.
+//function startGame ()
     var min=19; 
     var max=120;  
     var targetScore =Math.floor(Math.random() * (+max - +min)) + +min; 
     console.log(targetScore);
-
-
     // Locate on HTML where the target score will be posted
-
     document.getElementById("score-to-match-text").innerHTML = "Number to match: " + targetScore;
-
-
 //Show images of four crystals. Each crystal will have a separate numerical value (each will have a value randomly generated between 1 and 12).
     //var min=1; 
     ///var max=12;  
@@ -83,7 +82,6 @@ document.getElementById("yourTotalScore").innerHTML = "Your total score: " + you
     //var crystalNumber4 = Math.floor(Math.random() * (+max - +min)) + +min; 
     //console.log(crystalNumber4);
     
-
 //The user can click on a crystal image to see the value of that image. Each time a crystal image is clicked, it gets added to the user's total score.
     //Locate on HTML where crystal images will show    
     
@@ -108,18 +106,37 @@ document.getElementById("yourTotalScore").innerHTML = "Your total score: " + you
         console.log("counter", counter);
         console.log("crystal value", crystalValue);
         //alert("New score: " + counter);
-
     //Locate on HTML where user's score is posted
 //If the user reaches the target score without going over:
     //Show an alert, "You win!"
     //Increase number of wins by one
     if (counter === targetScore) {
-        alert("You win!");
+        alert("You win!!");
         won++;
-        $("wins").text("Wins " + won);
-        //Reset counter and generate new values for each crystal
+        document.getElementById("wins").innerHTML = "Wins: " + won;
+        //Clear user's total score
+        var yourNewTotalScore = 0;
+        document.getElementById("yourTotalScore").innerHTML = "Your total score: " + yourNewTotalScore;
+        //Clear crystals div
+        document.getElementById("crystals").innerHTML = "";
+        //Create new score to match
+        var min=19; 
+        var max=120;  
+        var newtargetScore =Math.floor(Math.random() * (+max - +min)) + +min; 
+        console.log(newtargetScore);
+        // Locate on HTML where the target score will be posted
+        document.getElementById("score-to-match-text").innerHTML = "Number to match: " + newtargetScore;
+        //create new crystal images with new attributes and data values
+        var newCounter = 0;
+        var crystalnumberArray2 = [12, 1, 5,7];
+        for (var i = 0; i < crystalnumberArray2.length; i++) {
+            var imageCrystal = $("<img>");
+            imageCrystal.addClass("crystal-image2");
+            imageCrystal.attr("src", "https://cdn.pixabay.com/photo/2016/04/13/22/03/amethyst-1327803_960_720.jpg");
+            imageCrystal.attr("data-crystalvalue", crystalnumberArray2[i]);
+            $("#crystals").append(imageCrystal); 
+        }
       }
-
 //If the user's score goes over the target score:
     //Show an alert, "You lose!"
     //Increase number of losses by one
@@ -127,10 +144,35 @@ document.getElementById("yourTotalScore").innerHTML = "Your total score: " + you
     else if (counter > targetScore) {
         alert("You lose!!");
         lost++;
-        $("losses").text("Losses: " + lost);
+        document.getElementById("losses").innerHTML = "Losses: " + lost;
+        //Clear user's total score
+        var yourNewTotalScore = 0;
+        document.getElementById("yourTotalScore").innerHTML = "Your total score: " + yourNewTotalScore;
+        //Clear crystals div
+        document.getElementById("crystals").innerHTML = "";
+        //Create new score to match
+        var min=19; 
+        var max=120;  
+        var newtargetScore =Math.floor(Math.random() * (+max - +min)) + +min; 
+        console.log(newtargetScore);
+        // Locate on HTML where the target score will be posted
+        document.getElementById("score-to-match-text").innerHTML = "Number to match: " + newtargetScore;
+        //create new crystal images with new attributes and data values
+        var newCounter = 0;
+        var crystalnumberArray2 = [12, 1, 5,7];
+        for (var i = 0; i < crystalnumberArray2.length; i++) {
+            var imageCrystal = $("<img>");
+            imageCrystal.addClass("crystal-image2");
+            imageCrystal.attr("src", "https://cdn.pixabay.com/photo/2016/04/13/22/03/amethyst-1327803_960_720.jpg");
+            imageCrystal.attr("data-crystalvalue", crystalnumberArray2[i]);
+            $("#crystals").append(imageCrystal); 
+        }
     }
 });
 
 </script>
 </body>
 </html>
+
+
+        
