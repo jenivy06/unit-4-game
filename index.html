@@ -31,11 +31,9 @@
             
             </div>
     <div class = "row">
-        <div id = "crystals">
+        <span><div id = "crystals"></span>
     </div>
-    </div>
-    <hr class ="hr">
-</div>     
+        
 <style>
 .wrapper{
         width: 1100px;
@@ -111,7 +109,7 @@ document.getElementById("yourTotalScore").innerHTML = "Your total score: " + you
     //Show an alert, "You win!"
     //Increase number of wins by one
     if (counter === targetScore) {
-        alert("You win!!");
+        alert("You win!! Play again?");
         won++;
         document.getElementById("wins").innerHTML = "Wins: " + won;
         //Clear user's total score
@@ -132,7 +130,7 @@ document.getElementById("yourTotalScore").innerHTML = "Your total score: " + you
         for (var i = 0; i < crystalnumberArray2.length; i++) {
             var imageCrystal = $("<img>");
             imageCrystal.addClass("crystal-image2");
-            imageCrystal.attr("src", "https://cdn.pixabay.com/photo/2016/04/13/22/03/amethyst-1327803_960_720.jpg");
+            imageCrystal.attr("src", "https://cdn.pixabay.com/photo/2014/02/13/14/33/amethyst-265338_960_720.jpg");
             imageCrystal.attr("data-crystalvalue", crystalnumberArray2[i]);
             $("#crystals").append(imageCrystal); 
         }
@@ -142,7 +140,7 @@ document.getElementById("yourTotalScore").innerHTML = "Your total score: " + you
     //Increase number of losses by one
         //locate on HTML where number of losses is posted
     else if (counter > targetScore) {
-        alert("You lose!!");
+        alert("You lose!! Play again?");
         lost++;
         document.getElementById("losses").innerHTML = "Losses: " + lost;
         //Clear user's total score
@@ -161,12 +159,38 @@ document.getElementById("yourTotalScore").innerHTML = "Your total score: " + you
         var newCounter = 0;
         var crystalnumberArray2 = [12, 1, 5,7];
         for (var i = 0; i < crystalnumberArray2.length; i++) {
+            //create new div
+            //$("#crystals").append("<div></div");
             var imageCrystal = $("<img>");
-            imageCrystal.addClass("crystal-image2");
-            imageCrystal.attr("src", "https://cdn.pixabay.com/photo/2016/04/13/22/03/amethyst-1327803_960_720.jpg");
+            imageCrystal.addClass("crystal-image");
+            imageCrystal.attr("src", "https://cdn.pixabay.com/photo/2014/02/13/14/33/amethyst-265338_960_720.jpg");
             imageCrystal.attr("data-crystalvalue", crystalnumberArray2[i]);
+            console.log(crystalnumberArray2);
             $("#crystals").append(imageCrystal); 
+            
         }
+        // Create new function that lets users click on image and image will have a numerical value that posts to "Your Total Score".
+        $(".crystal-image").on("click", function() {
+        var crystalValue = ($(this).attr("data-crystalvalue"));
+        console.log(this);
+        crystalValue = parseInt(crystalValue);
+        newCounter += crystalValue;
+       $("#yourTotalScore").text("Your total score: " + newCounter);
+        console.log("counter", newCounter);
+        console.log("crystal value", crystalValue);
+            if (newCounter > newtargetScore) {
+                alert("You lost again! Want to play more? Refresh this page.");
+                lost++;
+                document.getElementById("losses").innerHTML = "Losses: " + lost;
+        //Clear user's total score
+        var yourNewTotalScore = 0;
+        document.getElementById("yourTotalScore").innerHTML = "Your total score: " + yourNewTotalScore;
+            }
+            else if (newCounter === newtargetScore) {
+                alert("Congrats, you won! Refresh the page to keep playing!");
+            }
+        
+        });
     }
 });
 

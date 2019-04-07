@@ -37,6 +37,14 @@
 
 #crystals {
     padding-left: 28px;
+    position: relative;
+   left: 50%;
+   top: 150%; 
+   margin-left: -345px;
+   margin-top: -150px;
+}
+#crystals2 {
+    padding-left: 28px;
 }
 
 .hr {
