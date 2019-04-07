@@ -69,22 +69,22 @@ document.getElementById("yourTotalScore").innerHTML = "Your total score: " + you
     // Locate on HTML where the target score will be posted
     document.getElementById("score-to-match-text").innerHTML = "Number to match: " + targetScore;
 //Show images of four crystals. Each crystal will have a separate numerical value (each will have a value randomly generated between 1 and 12).
-    //var min=1; 
-    ///var max=12;  
-    //var crystalNumber1 = Math.floor(Math.random() * (+max - +min)) + +min; 
-    ///console.log(crystalNumber1);
-    //var crystalNumber2 = Math.floor(Math.random() * (+max - +min)) + +min; 
-    //console.log(crystalNumber2);
-    //var crystalNumber3 = Math.floor(Math.random() * (+max - +min)) + +min; 
-    //console.log(crystalNumber3);
-    //var crystalNumber4 = Math.floor(Math.random() * (+max - +min)) + +min; 
-    //console.log(crystalNumber4);
+    var min=1; 
+    var max=12;  
+    var crystalNumber1 = Math.floor(Math.random() * (+max - +min)) + +min; 
+    console.log(crystalNumber1);
+    var crystalNumber2 = Math.floor(Math.random() * (+max - +min)) + +min; 
+    console.log(crystalNumber2);
+    var crystalNumber3 = Math.floor(Math.random() * (+max - +min)) + +min; 
+    console.log(crystalNumber3);
+    var crystalNumber4 = Math.floor(Math.random() * (+max - +min)) + +min; 
+    console.log(crystalNumber4);
     
 //The user can click on a crystal image to see the value of that image. Each time a crystal image is clicked, it gets added to the user's total score.
     //Locate on HTML where crystal images will show    
     
     var counter = 0;
-    var crystalnumberArray1 = [11, 8, 4, 2];
+    var crystalnumberArray1 = [crystalNumber1, crystalNumber2, crystalNumber3, crystalNumber4];
     for (var i = 0; i < crystalnumberArray1.length; i++) {
         console.log(crystalnumberArray1);
         var imageCrystal = $("<img>");
@@ -125,8 +125,18 @@ document.getElementById("yourTotalScore").innerHTML = "Your total score: " + you
         // Locate on HTML where the target score will be posted
         document.getElementById("score-to-match-text").innerHTML = "Number to match: " + newtargetScore;
         //create new crystal images with new attributes and data values
-        var newCounter = 0;
-        var crystalnumberArray2 = [12, 1, 5,7];
+        var min=1; 
+    var max=12;  
+    var crystalNumber1 = Math.floor(Math.random() * (+max - +min)) + +min; 
+    console.log(crystalNumber1);
+    var crystalNumber2 = Math.floor(Math.random() * (+max - +min)) + +min; 
+    console.log(crystalNumber2);
+    var crystalNumber3 = Math.floor(Math.random() * (+max - +min)) + +min; 
+    console.log(crystalNumber3);
+    var crystalNumber4 = Math.floor(Math.random() * (+max - +min)) + +min; 
+    console.log(crystalNumber4);
+    var newCounter = 0;
+    var crystalnumberArray2 = [crystalNumber1, crystalNumber2, crystalNumber3, crystalNumber4];
         for (var i = 0; i < crystalnumberArray2.length; i++) {
             var imageCrystal = $("<img>");
             imageCrystal.addClass("crystal-image");
